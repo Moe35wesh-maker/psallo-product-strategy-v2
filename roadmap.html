@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psallo Product Roadmap - Curated Content Strategy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 4px solid #667eea;
+        }
+
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .strategy-note {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 10px;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .strategy-note strong {
+            color: #667eea;
+        }
+
+        .curation-principles {
+            background: #fff8f8;
+            padding: 50px;
+            border-radius: 15px;
+            margin: 50px 0;
+            border: 3px solid #ff6b6b;
+        }
+
+        .curation-principles h2 {
+            color: #ff6b6b;
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 2.3em;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .principle {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #ffe0e0;
+            transition: all 0.3s ease;
+        }
+
+        .principle:hover {
+            border-color: #ff6b6b;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+        }
+
+        .principle h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .principle p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .timeline {
+            margin: 60px 0;
+        }
+
+        .phase {
+            margin: 60px 0;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            border-left: 8px solid #667eea;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .phase-number {
+            font-size: 4em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .phase-title {
+            flex: 1;
+            font-size: 2.2em;
+            color: #2c3e50;
+        }
+
+        .phase-duration {
+            background: #667eea;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .phase-focus {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .phase-focus h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .phase-focus p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .initiatives {
+            display: grid;
+            gap: 30px;
+        }
+
+        .initiative {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .initiative:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+        }
+
+        .initiative.curation-focus {
+            border-left: 6px solid #ff6b6b;
+        }
+
+        .initiative-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .initiative-title {
+            font-size: 1.6em;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .badge {
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .badge.curation {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .badge.collaboration {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .badge.infrastructure {
+            background: #6c757d;
+            color: white;
+        }
+
+        .initiative-duration {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .initiative-description {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .initiative-impact {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .initiative-impact h4 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .initiative-impact ul {
+            margin-left: 20px;
+            line-height: 2;
+        }
+
+        .curation-highlight {
+            background: linear-gradient(135deg, #ff6b6b15 0%, #ee5a6f15 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .curation-highlight h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+
+        .curation-highlight p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .curation-highlight strong {
+            color: #ee5a6f;
+        }
+
+        .key-metrics {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+
+        .key-metrics h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.3em;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .metric {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .metric-value {
+            font-size: 2.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 1.05em;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .initiative-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎵 Psallo Product Roadmap</h1>
+            <div class="subtitle">24-Month Strategy: Curated Content + Team Collaboration</div>
+        </div>
+
+        <div class="strategy-note">
+            <strong>Strategic Vision:</strong> Transform Psallo from a comprehensive content library into a <strong>curated learning platform</strong> that combines expert-selected content with powerful team collaboration tools. In a world of information overload (750+ songs!), <strong>curation is the killer feature</strong>—helping worship leaders find exactly what they need, when they need it, personalized to their context.
+        </div>
+
+        <div class="curation-principles">
+            <h2>🎯 Content Curation Philosophy</h2>
+            <div class="principles-grid">
+                <div class="principle">
+                    <h3>1. Context-Aware</h3>
+                    <p>Content recommendations based on church size, denomination, worship style, and seasonal calendar (Advent, Lent, Easter, etc.)</p>
+                </div>
+                <div class="principle">
+                    <h3>2. Skill-Matched</h3>
+                    <p>Progressive learning paths that match user skill level—from beginner to advanced—with clear growth trajectory</p>
+                </div>
+                <div class="principle">
+                    <h3>3. Theologically Grounded</h3>
+                    <p>Every curated collection ties music to theology through Heart Training content—worship as discipleship</p>
+                </div>
+                <div class="principle">
+                    <h3>4. Community-Informed</h3>
+                    <p>Curation powered by what's working in real churches—trending songs, seasonal favorites, regional preferences</p>
+                </div>
+                <div class="principle">
+                    <h3>5. Expert-Vetted</h3>
+                    <p>Professional worship leaders and musicians curate collections ensuring quality over quantity</p>
+                </div>
+                <div class="principle">
+                    <h3>6. Continuously Refreshed</h3>
+                    <p>Dynamic curation that evolves with worship trends, user feedback, and seasonal needs</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <!-- PHASE 1 -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">1</div>
+                    <h2 class="phase-title">Foundation & Curation</h2>
+                    <div class="phase-duration">Months 0-6</div>
+                </div>
+
+                <div class="phase-focus">
+                    <h3>Strategic Focus</h3>
+                    <p>Launch <strong>personalized content curation</strong> to reduce overwhelm, mobile-responsive experience for on-the-go access, and team collaboration tools. Fix critical UX gaps and establish data infrastructure. The goal: Prove curation solves the discovery problem immediately.</p>
+                </div>
+
+                <div class="initiatives">
+                    <div class="initiative curation-focus">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Smart Onboarding & Personalization</div>
+                            <span class="badge curation">Curation Core</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 2-3 months | 1 FE, 1 BE, Designer</div>
+                        <div class="initiative-description">
+                            Transform first-time user experience from overwhelming to delightful. <strong>Welcome quiz creates personalized starter playlist instantly</strong>—users go from "I don't know where to start" to "Here are YOUR 10 songs" in under 2 minutes.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Features</h4>
+                            <ul>
+                                <li><strong>Welcome Quiz:</strong> Church size, denomination, worship style, skill level (5 questions, 60 seconds)</li>
+                                <li><strong>"Your First 10 Songs":</strong> Personalized starter playlist based on quiz answers</li>
+                                <li><strong>Trending in Your Context:</strong> "Churches like yours are learning these songs"</li>
+                                <li><strong>Quick Start Guide:</strong> Contextual tips based on user profile</li>
+                            </ul>
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Impact</h4>
+                            <ul>
+                                <li><strong>Reduce "first song" time:</strong> 15 min → 2 min</li>
+                                <li><strong>Increase activation:</strong> 50% → 75% of signups complete first song</li>
+                                <li><strong>Reduce drop-off:</strong> Personalization creates immediate value</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative curation-focus">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Expert-Curated Collections</div>
+                            <span class="badge curation">Curation Core</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 2 months | Content Team + 1 BE</div>
+                        <div class="initiative-description">
+                            Launch with <strong>12 hand-curated collections</strong> by professional worship leaders. Each collection is thoughtfully assembled with theological context, skill progression, and seasonal relevance. This is the foundation for all future AI curation.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Initial Collections</h4>
+                            <ul>
+                                <li><strong>Seasonal (5):</strong> Advent, Christmas, Lent, Easter, Pentecost</li>
+                                <li><strong>Skill Level (3):</strong> Beginner Essentials, Intermediate Growth, Advanced Mastery</li>
+                                <li><strong>Context (4):</strong> Small Church Favorites, Contemporary Classics, Traditional Hymns, Multi-Campus Excellence</li>
+                            </ul>
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Success Metrics</h4>
+                            <ul>
+                                <li>50% of new users browse a curated collection in first week</li>
+                                <li>30% of songs discovered come from curated collections (vs search)</li>
+                                <li>3x higher engagement with curated vs searched songs</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative collaboration">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Team Planning & Setlist Builder</div>
+                            <span class="badge collaboration">Collaboration</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 3-4 months | 2 FE, 2 BE, Designer</div>
+                        <div class="initiative-description">
+                            Enable worship teams to collaboratively plan services and assign parts. Enhanced with <strong>curation intelligence</strong> that suggests songs from curated collections when building setlists.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Core Features</h4>
+                            <ul>
+                                <li>Drag-and-drop setlist builder with liturgical calendar integration</li>
+                                <li>Part assignments (vocals, keys, guitar, drums, bass)</li>
+                                <li>Team skill matching (auto-suggest parts based on proficiency)</li>
+                                <li><strong>AI Setlist Suggestions:</strong> "Complete your setlist" recommendations</li>
+                                <li>Shared notes and sermon theme tagging</li>
+                            </ul>
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Curated Practice Content</h4>
+                            <ul>
+                                <li>Auto-generate "This Sunday's Songs" practice playlist</li>
+                                <li>Curate sectional rehearsals: drums, keys, vocals, guitar</li>
+                                <li>Suggest transition practice between setlist songs</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative infrastructure">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Mobile-Responsive Redesign</div>
+                            <span class="badge infrastructure">Foundation</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 2-3 months | 2 FE, Designer</div>
+                        <div class="initiative-description">
+                            Current site is desktop-only. Worship leaders need mobile access for on-the-go practice. Fully responsive redesign with mobile-first thinking.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Impact</h4>
+                            <ul>
+                                <li>60%+ mobile traffic (industry standard for media consumption)</li>
+                                <li>Enables practice anywhere (car, church, home)</li>
+                                <li>Foundation for Phase 2 native mobile apps</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative infrastructure">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Data Infrastructure & Analytics</div>
+                            <span class="badge infrastructure">Foundation</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 2 months | 1 BE, DevOps support</div>
+                        <div class="initiative-description">
+                            Implement Segment + Mixpanel/Amplitude for product analytics. Track user behavior to inform AI curation in Phase 2.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Key Events to Track</h4>
+                            <ul>
+                                <li>Song views, completions, repeat views</li>
+                                <li>Collection browsing patterns</li>
+                                <li>Setlist creation and team collaboration</li>
+                                <li>Search queries (what users can't find)</li>
+                                <li>Onboarding funnel drop-offs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curation-highlight">
+                    <h3>Why Curation First in Phase 1?</h3>
+                    <p><strong>The Problem:</strong> New users see 750+ songs and freeze. Analysis paralysis leads to drop-off.</p>
+                    <p><strong>The Solution:</strong> Smart onboarding + expert-curated collections reduce overwhelm immediately. Users get value in 2 minutes instead of 15 minutes.</p>
+                    <p><strong>The Foundation:</strong> Expert curation creates the training data for Phase 2 AI. We're building a labeled dataset of "what works" before deploying machine learning.</p>
+                </div>
+            </div>
+
+            <!-- PHASE 2 -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">2</div>
+                    <h2 class="phase-title">AI-Powered Curation & Mobile</h2>
+                    <div class="phase-duration">Months 6-12</div>
+                </div>
+
+                <div class="phase-focus">
+                    <h3>Strategic Focus</h3>
+                    <p>Launch <strong>AI-powered curation engine</strong> that learns and personalizes. Expand to native mobile apps for offline practice. Enable real-time team communication. Transform from "content library with collections" to "personal worship curator powered by AI."</p>
+                </div>
+
+                <div class="initiatives">
+                    <div class="initiative curation-focus">
+                        <div class="initiative-header">
+                            <div class="initiative-title">AI Curation Engine</div>
+                            <span class="badge curation">Curation Core</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 4-5 months | 1 ML Engineer (new hire), 1 BE, 1 FE</div>
+                        <div class="initiative-description">
+                            Build the <strong>intelligent curation layer</strong> that makes Psallo feel like it "knows you." Personalized "For You" homepage, smart search with natural language, and collaborative filtering that learns from your behavior and similar churches.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>AI Features</h4>
+                            <ul>
+                                <li><strong>Personalized "For You" Homepage:</strong> Like Spotify Discover Weekly for worship</li>
+                                <li><strong>Smart Search:</strong> Natural language ("upbeat Easter songs for small choir") → relevant results</li>
+                                <li><strong>Collaborative Filtering:</strong> "Churches like yours are learning..." recommendations</li>
+                                <li><strong>Skill Progression AI:</strong> Suggest next-level songs based on your current skills</li>
+                                <li><strong>Contextual Timing:</strong> Surface seasonal content at the right time</li>
+                            </ul>
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Technical Approach</h4>
+                            <ul>
+                                <li>Content-based filtering (song metadata, difficulty, style)</li>
+                                <li>Collaborative filtering (users with similar profiles)</li>
+                                <li>Hybrid model combining both approaches</li>
+                                <li>Training data from Phase 1 expert curation + user behavior</li>
+                            </ul>
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Success Metrics</h4>
+                            <ul>
+                                <li><strong>60% of songs discovered through AI</strong> vs search or browse</li>
+                                <li>5x higher engagement with AI-recommended vs user-searched songs</li>
+                                <li>80% of users engage with AI-curated content weekly</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative curation-focus">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Dynamic Curated Playlists</div>
+                            <span class="badge curation">Curation Core</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 2-3 months | Content Team + 1 BE</div>
+                        <div class="initiative-description">
+                            Expand from 12 static collections → <strong>50+ dynamic, auto-updating playlists</strong>. These playlists refresh weekly based on trends, seasonality, and user feedback. Curation that evolves, not stagnates.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>New Playlist Categories</h4>
+                            <ul>
+                                <li><strong>Trending:</strong> "Trending Now" (weekly), "Rising Stars" (emerging songs)</li>
+                                <li><strong>Regional:</strong> "Southern Favorites," "Coastal Contemporary," "Midwest Hymns"</li>
+                                <li><strong>Denominational:</strong> "Baptist Picks," "Methodist Classics," "Presbyterian Worship"</li>
+                                <li><strong>Thematic:</strong> "Communion Songs," "Baptismal Hymns," "Prayer & Meditation," "Sending Songs"</li>
+                                <li><strong>Artist Spotlights:</strong> Monthly featured worship leader collections</li>
+                            </ul>
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Impact</h4>
+                            <ul>
+                                <li>80% of users browse dynamic playlists weekly (vs 50% with static)</li>
+                                <li>3x more songs discovered per user through playlists</li>
+                                <li>Playlists become viral sharing mechanism ("Check out this collection!")</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative collaboration">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Native Mobile Apps (iOS & Android)</div>
+                            <span class="badge collaboration">Growth</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 5-6 months | 2 Mobile Engineers (contract), Designer</div>
+                        <div class="initiative-description">
+                            Native apps for offline practice with <strong>curated playlist downloads</strong>. Push notifications for new curated content. Mobile-first features like swipe-based playlist browsing.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Curation Features</h4>
+                            <ul>
+                                <li>Download curated playlists for offline practice</li>
+                                <li>Push notifications: "Your Easter collection updated with 5 new songs"</li>
+                                <li>Swipe-based playlist browsing (Tinder-style song discovery)</li>
+                                <li>Quick-save songs to setlists from "For You" feed</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative collaboration">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Team Communication Suite</div>
+                            <span class="badge collaboration">Collaboration</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 3-4 months | 1 FE, 1 BE</div>
+                        <div class="initiative-description">
+                            In-app messaging, Slack integration, and team notifications. Keep worship prep communication in one place.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Team chat channels (by song, by rehearsal, general)</li>
+                                <li>@mentions and notifications</li>
+                                <li>Slack integration (post setlists to Slack)</li>
+                                <li>Comment threads on songs and setlists</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curation-highlight">
+                    <h3>Curation Strategy for Phase 2</h3>
+                    <p><strong>The Evolution:</strong> Move from manual expert curation (Phase 1) to <strong>AI-powered dynamic curation</strong> that learns and adapts.</p>
+                    <p><strong>The Differentiator:</strong> While competitors offer content libraries, Psallo becomes <strong>"your personal worship curator"</strong>—like Spotify's Discover Weekly but for church worship.</p>
+                    <p><strong>Success Metric:</strong> 80% of users engage with AI-recommended content weekly (vs 50% with static collections).</p>
+                </div>
+            </div>
+
+            <!-- PHASE 3 -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">3</div>
+                    <h2 class="phase-title">Community Curation & Platform Scale</h2>
+                    <div class="phase-duration">Months 12-24</div>
+                </div>
+
+                <div class="phase-focus">
+                    <h3>Strategic Focus</h3>
+                    <p>Enable <strong>community-powered curation</strong> where worship leaders become content curators, launch creator marketplace with quality curation layer, expand to enterprise with custom curation tools, and build the ecosystem where Psallo becomes the "operating system" for worship content discovery.</p>
+                </div>
+
+                <div class="initiatives">
+                    <div class="initiative curation-focus">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Community Curator Program</div>
+                            <span class="badge curation">Curation Core</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 6 months | 1 FE, 1 BE, Content Team</div>
+                        <div class="initiative-description">
+                            Empower <strong>power users to become curators</strong>—create and share their own playlists, collections, and learning paths with the community. Curation scales through distributed expertise. This creates network effects: users follow curators from their churches and denominations.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Curator Features</h4>
+                            <ul>
+                                <li><strong>Curator Profiles:</strong> Worship leaders build reputation through quality curation</li>
+                                <li><strong>Public Playlists:</strong> "Baptismal Songs by Pastor Mike" shareable collections</li>
+                                <li><strong>Curator Tools:</strong> Easy playlist creation, song tagging, theological notes</li>
+                                <li><strong>Quality Scoring:</strong> Community rates curator playlists (5-star system)</li>
+                                <li><strong>Featured Curators:</strong> Editorial spotlight on exceptional community curators</li>
+                                <li><strong>Curator Incentives:</strong> Recognition badges, leaderboards, potential revenue share</li>
+                                <li><strong>Follow System:</strong> Users follow favorite curators like Twitter/Instagram</li>
+                            </ul>
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Goals</h4>
+                            <ul>
+                                <li>500+ active community curators by Month 24</li>
+                                <li>2,000+ community-created playlists</li>
+                                <li>40% of content discovery through community curation</li>
+                                <li>Viral growth: Users share curator profiles across churches</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative curation-focus">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Creator Marketplace with Curation Layer</div>
+                            <span class="badge curation">Curation Core</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 12 months | 2 FE, 2 BE, Designer, Content Team</div>
+                        <div class="initiative-description">
+                            Launch creator marketplace but with <strong>strict quality curation</strong>—not everything gets featured. Psallo curates the marketplace to maintain quality over quantity. Creators apply, content is reviewed, and only high-quality teaching gets prominently featured.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Curation Approach</h4>
+                            <ul>
+                                <li><strong>Curated Onboarding:</strong> Creators apply → quality review before publishing</li>
+                                <li><strong>Editorial Collections:</strong> Staff curate "Best of Creator Content" monthly</li>
+                                <li><strong>Quality Standards:</strong> Video quality, theological accuracy, teaching effectiveness</li>
+                                <li><strong>Discovery Algorithm:</strong> AI surfaces best creator content, not just newest</li>
+                                <li><strong>Thematic Curation:</strong> Featured creator collections by season/theme</li>
+                                <li><strong>Tiered Visibility:</strong> Approved creators get basic listing; exceptional ones get featured placement</li>
+                            </ul>
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Goals</h4>
+                            <ul>
+                                <li>100 vetted active creators (not 10,000 low-quality)</li>
+                                <li>20% of platform content from curated creators</li>
+                                <li>Maintain 4.5+ star average quality rating</li>
+                                <li>Revenue share: 70% creator, 30% Psallo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative curation-focus">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Worship Planning AI Assistant</div>
+                            <span class="badge curation">Curation Core</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 4-5 months | 1 ML Engineer, 1 BE, 1 FE</div>
+                        <div class="initiative-description">
+                            The ultimate curation application: <strong>AI curates entire service setlists</strong>. Input sermon theme and date → receive complete 6-song setlist recommendation. Checks team skill levels, liturgical calendar, and theological themes.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>How It Works</h4>
+                            <ul>
+                                <li>Input: Sermon title/theme, service date, team members</li>
+                                <li>AI analyzes: Theological themes, liturgical season, team skills, song difficulty</li>
+                                <li>Output: Complete setlist with flow explanation ("This song transitions well because...")</li>
+                                <li>Human refinement: Edit and save with one click</li>
+                            </ul>
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Impact</h4>
+                            <ul>
+                                <li>Reduce setlist planning from 2 hours → 20 minutes</li>
+                                <li>80% of users try AI planning within first month</li>
+                                <li>50% of setlists start with AI suggestions</li>
+                                <li>Ultimate proof that curation is THE product</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative collaboration">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Enterprise Custom Curation</div>
+                            <span class="badge collaboration">Enterprise</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 8-10 months | 2 BE, 1 FE, Designer</div>
+                        <div class="initiative-description">
+                            White-label solution where denominations and megachurches can <strong>curate their own private content libraries</strong> alongside Psallo's catalog. Custom curation for organizational needs.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Custom Curation Features</h4>
+                            <ul>
+                                <li>Private content channels with organizational curation</li>
+                                <li>Denominational playlists (Southern Baptist, UMC, Presbyterian)</li>
+                                <li>Campus-specific curation for multi-site churches</li>
+                                <li>Admin curator roles (who can curate for the org)</li>
+                                <li>Custom branding on curated collections</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="initiative collaboration">
+                        <div class="initiative-header">
+                            <div class="initiative-title">Advanced Analytics & Reporting</div>
+                            <span class="badge infrastructure">Foundation</span>
+                        </div>
+                        <div class="initiative-duration">⏱️ 3 months | 1 BE, Designer</div>
+                        <div class="initiative-description">
+                            Enterprise-grade reporting for church leaders and admins. Show curation impact with data.
+                        </div>
+                        <div class="initiative-impact">
+                            <h4>Curation Analytics</h4>
+                            <ul>
+                                <li>Which curated collections drive most engagement?</li>
+                                <li>Curation vs search: discovery source breakdown</li>
+                                <li>Team skill progression through curated learning paths</li>
+                                <li>ROI of curated vs non-curated content</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curation-highlight">
+                    <h3>Curation Strategy for Phase 3</h3>
+                    <p><strong>The Scale Challenge:</strong> How do we maintain curation quality as we grow from 12 collections → thousands of community playlists?</p>
+                    <p><strong>The Solution:</strong> Curation OF curation. We curate which curators and creators get featured. Quality ratings, editorial selections, and algorithmic ranking ensure the best content surfaces.</p>
+                    <p><strong>The Moat:</strong> Not just content (which can be copied) but <strong>curation intelligence</strong>—the AI models, community trust, quality standards, and curator network become defensible assets.</p>
+                    <p><strong>Success Metric:</strong> 70% of content discovery happens through curation (AI, community, or expert) vs direct search—proving curation is the primary discovery mechanism.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="key-metrics">
+            <h2>📊 Success Metrics: Curation Impact</h2>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-value">70%</div>
+                    <div class="metric-label">Content discovered through curation vs search</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">5x</div>
+                    <div class="metric-label">Higher engagement with curated vs searched content</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">50+</div>
+                    <div class="metric-label">Dynamic curated playlists by Phase 2</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">500+</div>
+                    <div class="metric-label">Community curators by Phase 3</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">80%</div>
+                    <div class="metric-label">Users engage with AI-curated content weekly</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">-60%</div>
+                    <div class="metric-label">Reduction in "empty search" bounces</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-note" style="margin-top: 50px;">
+            <strong>Why Curation Wins:</strong> In a world of infinite content, <strong>curation is the scarce resource</strong>. Psallo's competitive advantage isn't 750+ songs (competitors will match this)—it's the <strong>intelligent curation layer</strong> that helps worship leaders discover exactly what they need without overwhelming search. This combines expert knowledge, AI intelligence, community wisdom, and team context into a <strong>defensible moat</strong> that competitors can't easily replicate. Content can be copied. Curation intelligence cannot.
+        </div>
+    </div>
+</body>
+</html>
