@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psallo Product Strategy - Curated Content Focus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 80px 60px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero .curation-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        .strategy-statement {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 10px;
+            font-size: 1.3em;
+            line-height: 1.8;
+        }
+
+        .strategy-statement strong {
+            color: #667eea;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-value {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .curation-principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .principle-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .principle-card:hover {
+            background: #e9ecef;
+            border-left-width: 8px;
+        }
+
+        .principle-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .principle-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .value-prop {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .value-prop h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .value-prop p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .curation-layers {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 20px;
+            margin: 50px 0;
+        }
+
+        .curation-layers h2 {
+            color: white;
+            border-bottom: 3px solid white;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .layers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .layer {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .layer-number {
+            font-size: 3em;
+            font-weight: bold;
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+
+        .layer h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .layer p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .problem-box {
+            background: #ffe0e0;
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .solution-box {
+            background: #d4edda;
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid #28a745;
+        }
+
+        .problem-box h3, .solution-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .problem-box ul, .solution-box ul {
+            margin-left: 20px;
+            line-height: 2;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border-bottom: none;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #f5576c;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.3em;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #e9ecef;
+        }
+
+        .quote {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 10px;
+            font-style: italic;
+            font-size: 1.3em;
+            line-height: 1.8;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 30px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .tagline {
+                font-size: 1.2em;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid, .curation-principles, .value-props, .layers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>🎵 Psallo Product Strategy</h1>
+            <div class="tagline">Transform Content Overwhelm into Curated Discovery</div>
+            <div class="curation-badge">🎯 Curation-First Product Strategy</div>
+            <p style="font-size: 1.2em; color: #666; margin-top: 30px;">
+                A comprehensive 24-month roadmap to evolve from individual learning tool<br>
+                to the intelligent operating system for church worship teams
+            </p>
+        </div>
+
+        <!-- Strategic Statement -->
+        <div class="strategy-statement">
+            <strong>Strategic Vision:</strong> In a world of information overload, <strong>curation is the killer feature</strong>. Psallo's competitive advantage isn't 750 songs—it's the <strong>intelligent curation layer</strong> that helps worship leaders discover exactly what they need without overwhelming them. This creates a defensible moat that competitors can't easily replicate: content can be copied, but curation intelligence cannot.
+        </div>
+
+        <!-- Key Statistics -->
+        <div class="section">
+            <h2>📊 Platform Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">7,000</div>
+                    <div class="stat-label">Current Customer Accounts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">750+</div>
+                    <div class="stat-label">Songs in Library</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">70%</div>
+                    <div class="stat-label">Discovery Through Curation (Target)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5x</div>
+                    <div class="stat-label">Higher Engagement with Curated Content</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">280K</div>
+                    <div class="stat-label">Total Addressable Market (Churches)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">2.5%</div>
+                    <div class="stat-label">Current Market Penetration</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Problem & Solution -->
+        <div class="section">
+            <h2>🎯 The Challenge: From Overwhelm to Discovery</h2>
+            <div class="problem-solution">
+                <div class="problem-box">
+                    <h3>❌ The Problem</h3>
+                    <ul>
+                        <li><strong>Analysis Paralysis:</strong> 750+ songs overwhelm users</li>
+                        <li><strong>High Drop-off:</strong> Users don't know where to start</li>
+                        <li><strong>Search Assumes Knowledge:</strong> Users must know what to search for</li>
+                        <li><strong>Undifferentiated:</strong> Content library alone isn't unique</li>
+                        <li><strong>Decision Fatigue:</strong> Too many choices lead to inaction</li>
+                    </ul>
+                </div>
+                <div class="solution-box">
+                    <h3>✅ The Solution: Intelligent Curation</h3>
+                    <ul>
+                        <li><strong>Personalized Discovery:</strong> "Here are YOUR 10 songs"</li>
+                        <li><strong>Reduced Overwhelm:</strong> Guided pathways, not endless browsing</li>
+                        <li><strong>Context-Aware:</strong> Based on church size, denomination, skill</li>
+                        <li><strong>Defensible Moat:</strong> Curation intelligence can't be copied</li>
+                        <li><strong>Faster Value:</strong> 2 minutes to first song (from 15 min)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Curation Philosophy -->
+        <div class="section">
+            <h2>🎯 Content Curation Philosophy</h2>
+            <p style="font-size: 1.2em; margin-bottom: 30px; color: #555;">
+                Our curation strategy goes beyond simple recommendations. It's a comprehensive approach that combines expert knowledge, AI intelligence, community wisdom, and team context to deliver the right content at the right time.
+            </p>
+            <div class="curation-principles">
+                <div class="principle-card">
+                    <h3>1. Context-Aware</h3>
+                    <p>Content recommendations based on church size, denomination, worship style, and seasonal calendar (Advent, Lent, Easter, etc.)</p>
+                </div>
+                <div class="principle-card">
+                    <h3>2. Skill-Matched</h3>
+                    <p>Progressive learning paths that match user skill level—from beginner to advanced—with clear growth trajectory</p>
+                </div>
+                <div class="principle-card">
+                    <h3>3. Theologically Grounded</h3>
+                    <p>Every curated collection ties music to theology through Heart Training content—worship as discipleship</p>
+                </div>
+                <div class="principle-card">
+                    <h3>4. Community-Informed</h3>
+                    <p>Curation powered by what's working in real churches—trending songs, seasonal favorites, regional preferences</p>
+                </div>
+                <div class="principle-card">
+                    <h3>5. Expert-Vetted</h3>
+                    <p>Professional worship leaders and musicians curate collections ensuring quality over quantity</p>
+                </div>
+                <div class="principle-card">
+                    <h3>6. Continuously Refreshed</h3>
+                    <p>Dynamic curation that evolves with worship trends, user feedback, and seasonal needs</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Four-Layer Curation Strategy -->
+        <div class="curation-layers">
+            <h2>🚀 Four-Layer Curation Moat</h2>
+            <p style="font-size: 1.3em; margin-bottom: 40px; opacity: 0.95;">
+                Our competitive advantage is built on four reinforcing layers of curation intelligence that competitors cannot easily replicate:
+            </p>
+            <div class="layers-grid">
+                <div class="layer">
+                    <div class="layer-number">1</div>
+                    <h3>Expert Curation</h3>
+                    <p><strong>Phase 1 (Months 0-6)</strong><br>Professional worship leaders hand-select 12 curated collections. Quality guarantee from trusted sources. Foundation for all other layers.</p>
+                </div>
+                <div class="layer">
+                    <div class="layer-number">2</div>
+                    <h3>AI Intelligence</h3>
+                    <p><strong>Phase 2 (Months 6-12)</strong><br>Machine learning personalizes recommendations. "For You" homepage like Spotify. Collaborative filtering learns from user behavior.</p>
+                </div>
+                <div class="layer">
+                    <div class="layer-number">3</div>
+                    <h3>Community Wisdom</h3>
+                    <p><strong>Phase 3 (Months 12-24)</strong><br>Distributed curation from 500+ power users. Viral growth through curator following. Community-created playlists scale curation.</p>
+                </div>
+                <div class="layer">
+                    <div class="layer-number">4</div>
+                    <h3>Team Context</h3>
+                    <p><strong>All Phases</strong><br>Curation informed by team skill levels and collaboration patterns. AI suggests songs based on your team's strengths and setlist history.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spotify vs Apple Music Analogy -->
+        <div class="quote">
+            "Think Spotify vs Apple Music: Both have the same music catalog, but <strong>Spotify wins on curation</strong> (Discover Weekly, personalized playlists, algorithms). Same with Psallo—our competitors can license the same songs, but they can't replicate our curation intelligence built on years of data, algorithms, and community trust."
+        </div>
+
+        <!-- Value Propositions -->
+        <div class="section">
+            <h2>💎 Core Value Propositions</h2>
+            <div class="value-props">
+                <div class="value-prop">
+                    <h3>🎯 Personalized Discovery</h3>
+                    <p>Your personalized "For You" experience surfaces the perfect songs based on your church context, skill level, and what's working for similar worship leaders.</p>
+                </div>
+                <div class="value-prop">
+                    <h3>📚 Expert-Curated Collections</h3>
+                    <p>12 hand-selected collections by professional worship leaders: Seasonal (Advent, Easter), Skill Level (Beginner to Advanced), and Context (Small Church, Contemporary Classics).</p>
+                </div>
+                <div class="value-prop">
+                    <h3>🤖 AI-Powered Recommendations</h3>
+                    <p>Machine learning that gets smarter with every interaction. Collaborative filtering shows you "Churches like yours are learning..." recommendations.</p>
+                </div>
+                <div class="value-prop">
+                    <h3>👥 Community Curation</h3>
+                    <p>Follow worship leaders you respect. Discover community-created playlists. Share your own curated collections with the Psallo community.</p>
+                </div>
+                <div class="value-prop">
+                    <h3>⚡ Faster Time to Value</h3>
+                    <p>Reduce "first song" time from 15 minutes to 2 minutes. Smart onboarding quiz creates your personalized starter playlist immediately.</p>
+                </div>
+                <div class="value-prop">
+                    <h3>🛡️ Quality Over Quantity</h3>
+                    <p>We curate the 750+ song library so you don't have to. Every recommendation is vetted for quality, theological accuracy, and teaching effectiveness.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Before/After Comparison Table -->
+        <div class="section">
+            <h2>📈 The Transformation: Before vs After Curation</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Before (Content Library)</th>
+                        <th>After (Curated Platform)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"We have 750+ songs"</td>
+                        <td>"We curate exactly what YOU need"</td>
+                    </tr>
+                    <tr>
+                        <td>Users search and browse aimlessly</td>
+                        <td>Personalized "For You" homepage</td>
+                    </tr>
+                    <tr>
+                        <td>15 minutes to find first song</td>
+                        <td>2 minutes to start learning</td>
+                    </tr>
+                    <tr>
+                        <td>Analysis paralysis from too many choices</td>
+                        <td>Guided discovery with curated pathways</td>
+                    </tr>
+                    <tr>
+                        <td>High drop-off during onboarding</td>
+                        <td>Smart onboarding with instant playlist</td>
+                    </tr>
+                    <tr>
+                        <td>Generic experience for all users</td>
+                        <td>Context-aware (church size, denomination, skill)</td>
+                    </tr>
+                    <tr>
+                        <td>Content can be copied by competitors</td>
+                        <td>Curation intelligence creates defensible moat</td>
+                    </tr>
+                    <tr>
+                        <td>Static collections never updated</td>
+                        <td>Dynamic AI-powered curation that evolves</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Success Metrics -->
+        <div class="section">
+            <h2>📊 Success Metrics: Measuring Curation Impact</h2>
+            <p style="font-size: 1.2em; margin-bottom: 30px; color: #555;">
+                We measure success through curation engagement, not just vanity metrics:
+            </p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">70%</div>
+                    <div class="stat-label">Content discovered through curation vs search</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5x</div>
+                    <div class="stat-label">Higher engagement with curated vs searched content</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Dynamic curated playlists by Phase 2</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">500+</div>
+                    <div class="stat-label">Community curators by Phase 3</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">80%</div>
+                    <div class="stat-label">Users engage with AI-curated content weekly</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">-60%</div>
+                    <div class="stat-label">Reduction in "empty search" bounces</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>🚀 Ready to Explore the Full Strategy?</h2>
+            <p>Dive into our comprehensive 24-month roadmap with phase-by-phase curation initiatives, team collaboration features, and detailed implementation plans.</p>
+            <a href="roadmap.html" class="cta-button">View Complete Roadmap →</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Psallo Product Strategy - Curated Content Focus</strong></p>
+            <p>24-Month Roadmap | Prepared for The Worship Initiative Interview</p>
+            <p>Last Updated: November 5, 2025</p>
+        </div>
+    </div>
+</body>
+</html>
