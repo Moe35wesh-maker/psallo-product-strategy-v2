@@ -194,8 +194,8 @@ This case study was developed as part of a Product Manager interview process for
 **Location:** McKinney, Texas  
 
 **Connect:**
-- [LinkedIn](https://www.linkedin.com/in/moses-wainaina) *(Update with your actual LinkedIn)*
-- [Email](mailto:your.email@example.com) *(Update with your actual email)*
+- [LinkedIn]( https://www.linkedin.com/in/moses-ondeche-3a0a5835/ ) *(Update with your actual LinkedIn)*
+- [Email](moe35wesh@gmail.com) *(Update with your actual email)*
 
 ---
 
